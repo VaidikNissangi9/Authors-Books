@@ -20,5 +20,13 @@ public class AuthorController {
             authorService.addAuthor(author);
     }
 
+    /**
+     * returns all author records
+     * @return
+     */
+    @RequestMapping("/authors")
+    public List<Author> getAllAuthors(){
 
+        return authorService.getAllAuthors();
+    }
 }

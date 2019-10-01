@@ -23,4 +23,14 @@ public class BookController {
         bookService.addBook(book);
     }
 
+    /**
+     * returns all the books of an author
+     * @param aID
+     * @return
+     */
+    @RequestMapping("/authors/{id}/books")
+    public List<Book> getAllBooks(@PathVariable("id") Integer aID){
+
+        return bookService.getAllBooks(aID);
+    }
 }
