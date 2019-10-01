@@ -11,4 +11,16 @@ import java.util.Optional;
 public class BookController {
     @Autowired
     private BookService bookService;
+
+    /**
+     * adds a book for an author
+     * @param aID
+     * @param book
+     */
+    @RequestMapping(method= RequestMethod.POST,value = "/authors/{id}/books")
+    public void addBook(@PathVariable("id") Integer aID,@RequestBody Book book){
+        book.setAuthor(new Author(aID,""));
+        bookService.addBook(book);
+    }
+
 }
